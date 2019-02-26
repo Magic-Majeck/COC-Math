@@ -1,0 +1,40 @@
+using System;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+class Solution
+{
+    static void Main(string[] args)
+    {
+        int N = int.Parse(Console.ReadLine());
+        int closeIndex = 0;
+        int[] x = new int[N];
+        int[] y = new int[N];
+        
+        int closestDistance = 99999999;
+        
+        for (int i = 0; i < N; i++)
+        {
+            string[] inputs = Console.ReadLine().Split(' ');
+            x[i] = int.Parse(inputs[0]);
+            y[i] = int.Parse(inputs[1]);
+            
+            if(Math.Abs(x[i]) + Math.Abs(y[i]) < closestDistance)
+            {
+                closestDistance = Math.Abs(x[i]) + Math.Abs(y[i]);
+                closeIndex = i;
+            }
+            
+        }
+
+        
+        Console.WriteLine(x[closeIndex] + " " + y[closeIndex]);
+    }
+}
