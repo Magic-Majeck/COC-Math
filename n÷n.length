@@ -1,0 +1,11 @@
+using System;
+
+class Solution
+{
+    static void Main(string[] args)
+    {
+        long n = long.Parse(Console.ReadLine());
+
+        Console.WriteLine(n/n.ToString().Length);
+    }
+}
