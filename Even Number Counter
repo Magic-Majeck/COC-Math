@@ -1,0 +1,20 @@
+
+class Solution
+{
+    static void Main(string[] args)
+    {
+        string N = Console.ReadLine();
+        
+        int t = 0;
+        foreach(char c in N)
+        {
+            if(int.Parse(c.ToString()) % 2 == 0)
+            {
+                t += int.Parse(c.ToString());
+            }
+        }
+        
+        
+        Console.WriteLine(t);
+    }
+}
