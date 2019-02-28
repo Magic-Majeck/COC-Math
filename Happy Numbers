@@ -1,0 +1,35 @@
+using System;
+using System.Numerics;
+
+class Solution
+{
+    static void Main(string[] args)
+    {
+        BigInteger N = BigInteger.Parse(Console.ReadLine());
+        bool happy = false;
+        
+        BigInteger num = N;
+        for(int i = 0; i < 1000; i++)
+        {
+            string n = num.ToString();
+            int newNum = 0;
+            for(int j = 0; j < n.Length; j++)
+            {
+                newNum += (int)Math.Pow(int.Parse(n[j].ToString()), 2);
+            }
+            if(newNum == 1)
+            {
+                happy = true;
+                break;
+            }
+            num = newNum;
+        }
+        
+        Console.Write(N + " IS ");
+        if(!happy)
+        {
+            Console.Write("UN");
+        }
+        Console.WriteLine("HAPPY");
+    }
+}
